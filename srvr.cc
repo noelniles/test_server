@@ -37,7 +37,7 @@ int main (int argc, char **argv)
  
     listenfd = socket(AF_INET, SOCK_STREAM, 0);
  
-    bzero(&servaddr, sizeof(servaddr));
+    memset(&servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servaddr.sin_port = htons(SERV_PORT);
@@ -51,7 +51,7 @@ int main (int argc, char **argv)
  
     for (;;)
     {
-        bzero(buf, MAXLINE);
+        memset(buf, 0, MAXLINE);
         if((n = read(socketfd, buf, MAXLINE)) == 0)
         {
             close(socketfd);
