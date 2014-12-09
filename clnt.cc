@@ -1,28 +1,14 @@
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <sys/time.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <errno.h>
-#include <fcntl.h>
-#include <netdb.h>
-#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <strings.h>
-#include <sys/stat.h>
-#include <sys/uio.h>
-#include <sys/wait.h>
-#include <sys/select.h>
+#include "clnt.h"
 
-#define LISTENQ 1
-#define MAXLINE 4096
-#define MAXSOCKADDR 128
-#define BUFFSIZE 8192
-#define SERV_PORT 9878
-#define SERV_PORT_STR "9878"
 
 int main (int argc, char **argv)
 {
